@@ -1,19 +1,17 @@
+// / src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import App from './App';
-import ToDoApp from './to-do';
-
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './redux/todostore';
+import ToDoApp1 from './components/ToDoApp1';
+import './todo.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-
-
-
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <ToDoApp1 />
+    </PersistGate>
+  </Provider>
 );
-
-reportWebVitals();

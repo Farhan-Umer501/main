@@ -66,6 +66,7 @@ const Authentication = () => {
 
       try {
         const parsedUser = JSON.parse(storedData);
+       
         if (parsedUser.passwordInput === passwordInput) {
           setErrorMessage('Login successfully');
           localStorage.setItem('username', usernameInput); // For session tracking
