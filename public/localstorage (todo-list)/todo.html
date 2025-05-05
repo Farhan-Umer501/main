@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ToDo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: "tw-",
+      theme: {
+        extend: {
+          colors: {
+            dark: "#1e293b", // Fixed color
+            yellowAccent: "#e74c3c",
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="tw-bg-dark tw-min-h-screen tw-flex tw-items-center tw-justify-center" style="background-image: url('to-do.jpg'); background-size: cover; background-position: center center;">
+
+  <div class="tw-max-w-xl tw-w-full tw-mx-auto tw-p-6 tw-bg-gray-800 tw-rounded-lg tw-shadow-xl">
+    <h1 class="tw-text-yellowAccent tw-text-center tw-font-bold tw-text-3xl tw-mb-6 tw-uppercase">TODO LIST</h1>
+
+    <div class="tw-flex tw-mb-4">
+      <input type="text" id="taskInput" placeholder="Add new task..." class="tw-flex-grow tw-px-4 tw-py-2 tw-rounded-l-lg tw-bg-gray-700 tw-text-white focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-yellowAccent"/>
+      <button id="addTaskBtn" class="tw-px-6 tw-bg-yellowAccent tw-rounded-r-lg tw-text-lg tw-font-semibold hover:tw-font-bold hover:tw-underline tw-transition tw-ease-in-out tw-duration-500 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-yellowAccent">Add</button>
+    </div>
+
+    <!-- <div class="tw-flex tw-gap-4 tw-justify-center tw-mb-4">
+      <button class="tw-filter-btn tw-bg-yellowAccent tw-text-white tw-px-3 tw-py-1 tw-rounded" data-filter="all">All</button>
+      <button class="tw-filter-btn tw-bg-green-500 tw-text-white tw-px-3 tw-py-1 tw-rounded" data-filter="completed">Completed</button>
+    </div> -->
+
+    <div id="message" class="tw-text-green-400 tw-text-center tw-text-sm tw-font-medium tw-italic tw-mb-4" style="
+      color: #e1e115;
+      text-align: center;
+      font-size: small;margin: 16px;
+    "></div>
+
+    <ul id="taskList" class="tw-space-y-4"></ul>
+  </div>
+
+  <script src="to-do.js"></script>
+</body>
+</html>
